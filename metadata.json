@@ -1,0 +1,6 @@
+{
+  "name": "Regalos Resueltos",
+  "description": "Encuentra el regalo perfecto para cualquier persona, ocasión y presupuesto con IA, listas de deseos y planificador de sorpresas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
