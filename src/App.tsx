@@ -129,7 +129,7 @@ export default function App() {
         <section className="space-y-6 max-w-md mx-auto">
           <div className="text-center space-y-2">
             <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-[#1C1C1E]">
-              Mirá lo fácil que es armar tus propios regalos personalizados
+              Mirá lo fácil que es armar<br />tus propios regalos
             </h3>
             <p className="text-xs text-[#6E6E73] uppercase tracking-wider font-semibold">
               Paso a paso: elegís diseño → mandás a imprimir → aplicás el DTF → resultado final.
