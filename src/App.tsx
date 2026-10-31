@@ -21,16 +21,16 @@ export default function App() {
   });
 
   const giftIdeas = [
-    { title: "Regalo 1: Tote Bags Navideñas", desc: "Bolsas económicas que se consiguen en Mercado Libre, sin moverte de tu casa. Incluye estampas para 3 bolsos.", category: "Textil", tag: "Más Vendido", img: "https://i.imgur.com/u46bIIo.jpeg" },
-    { title: "Regalo 2: Neceser y Cartucheras", desc: "Neceser y cartucheras prácticas para regalar con cosméticos o artículos de uso diario.", category: "Textil", tag: "Muy Popular", img: "https://i.imgur.com/w6LtWRI.jpeg" },
-    { title: "Regalo 3: Tazas de Cerámica", desc: "Tazas de cerámica clásicas que nunca fallan con diseños navideños exclusivos.", category: "Cerámica", tag: "Clásico", img: "https://i.imgur.com/NTqfQGg.jpeg" },
-    { title: "Regalo 4: Vasos Térmicos DTF UV", desc: "Vasos térmicos con acabado brillante y resistente al agua sin necesidad de horno.", category: "DTF UV", tag: "Tendencia", img: "https://i.imgur.com/OkFfucE.jpeg" },
-    { title: "Regalo 5: Botellas Metálicas Premium", desc: "Botellas de acero inoxidable, personalización premium para regalar a seres queridos.", category: "Metálicos", tag: "Elegante", img: "https://i.imgur.com/Avz1vCz.jpeg" },
-    { title: "Regalo 6: Agendas & Cuadernos", desc: "Agendas y cuadernos con tapas personalizadas para recibir el año con todo.", category: "Papelería", tag: "Útil", img: "https://i.imgur.com/8TMfEkX.jpeg" },
-    { title: "Regalo 7: Delantales de Cocina", desc: "Delantales de cocina perfectos para los amantes de la gastronomía y cenas navideñas.", category: "Textil", tag: "Familiar", img: "https://i.imgur.com/yiG3Cg1.jpeg" },
-    { title: "Regalo 8: Cajas Navideñas Madera", desc: "Cajas de madera para presentación elegante de pan dulces, sidras y vinos.", category: "Madera", tag: "Exclusivo", img: "https://i.imgur.com/t7r5am6.jpeg" },
-    { title: "Regalo 9: Llaveros de Acrílico", desc: "Accesorios económicos ideales para regalar masivamente en oficinas o grupos.", category: "Acrílico", tag: "Económico", img: "https://i.imgur.com/lBCSEfS.jpeg" },
-    { title: "Regalo 10: Velas Aromáticas", desc: "Velas en frasco de vidrio decoradas con etiquetas especiales navideñas.", category: "Hogar", tag: "Emocionante", img: "https://i.imgur.com/mR5Vu6w.jpeg" },
+    "https://i.imgur.com/5RAt3Wt.jpeg",
+    "https://i.imgur.com/itRWi7G.jpeg",
+    "https://i.imgur.com/ICg7Nvq.jpeg",
+    "https://i.imgur.com/lqSZLb2.jpeg",
+    "https://i.imgur.com/hWaunHL.jpeg",
+    "https://i.imgur.com/ucCNftW.jpeg",
+    "https://i.imgur.com/mEPNn7N.jpeg",
+    "https://i.imgur.com/5ND6nB8.jpeg",
+    "https://i.imgur.com/SYZLJGr.jpeg",
+    "https://i.imgur.com/x3gTi4P.jpeg",
   ];
 
   const faqs = [
@@ -121,7 +121,7 @@ export default function App() {
           <div className="w-full aspect-[9/16] bg-black rounded-3xl shadow-2xl overflow-hidden border border-[#E5E5EA] relative">
             <iframe 
               className="w-full h-full"
-              src="https://www.youtube.com/embed/Ktjk-blCU9c" 
+              src="https://www.youtube.com/embed/MTc-B42KoB0" 
               title="Video Demostrativo Regalos Resueltos" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               allowFullScreen
@@ -130,7 +130,7 @@ export default function App() {
         </section>
 
         {/* GALERÍA DE LAS 10 IDEAS DE REGALO */}
-        <section className="space-y-10">
+        <section className="space-y-12 bg-white/80 border border-[#E5E5EA] rounded-3xl p-8 md:p-14 shadow-sm">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#D93829] text-white font-extrabold text-xs uppercase tracking-widest border border-[#D4AF37] shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" /> Catálogo Oficial Exclusivo
@@ -143,46 +143,19 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {giftIdeas.map((item, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {giftIdeas.map((imgUrl, idx) => (
               <div 
                 key={idx} 
-                className="bg-white border-2 border-[#E5E5EA] hover:border-[#D4AF37] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 space-y-5 flex flex-col justify-between group transform hover:-translate-y-1"
+                className="bg-[#FAF9F5] border-2 border-[#D4AF37] rounded-3xl p-4 md:p-6 shadow-lg overflow-hidden flex flex-col items-center justify-center"
               >
-                <div className="space-y-4">
-                  <div className="w-full bg-[#FAF9F5] border-b border-[#E5E5EA] relative overflow-hidden flex items-center justify-center p-0 aspect-[4/5] group-hover:bg-amber-50/40 transition-colors">
-
-
-                    {item.img ? (
-                      <img 
-                        src={item.img} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        referrerPolicy="no-referrer"
-                      />
-                    ) : (
-                      <div className="flex flex-col items-center justify-center p-4 text-[#6E6E73]">
-                        <Gift className="w-10 h-10 text-[#E05A47] mb-2" />
-                        <span className="text-xs font-bold text-[#1C1C1E]">{item.title}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="px-6 space-y-1.5">
-                    <h4 className="font-extrabold text-base md:text-lg text-[#1C1C1E] group-hover:text-[#D93829] transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs md:text-sm text-[#6E6E73] leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mx-6 mb-6 pt-4 border-t border-[#E5E5EA] flex items-center justify-between text-xs font-bold text-[#1C1C1E]">
-                  <span className="flex items-center gap-1.5 text-emerald-700">
-                    <Check className="w-4 h-4 text-emerald-600 bg-emerald-100 rounded-full p-0.5" /> PNG 300 DPI Alta Resolución
-                  </span>
-                  <span className="text-xs text-[#996515] bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">HD / Impresión</span>
+                <div className="w-full bg-white rounded-2xl overflow-hidden shadow-inner flex items-center justify-center">
+                  <img 
+                    src={imgUrl} 
+                    alt={`Regalo #${idx + 1}`} 
+                    className="w-full h-auto object-contain"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
               </div>
             ))}
@@ -206,7 +179,7 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white text-[#1C1C1E] rounded-2xl border-2 border-[#D4AF37]/50 shadow-xl space-y-3 relative transform hover:scale-[1.02] transition-transform">
+            <div className="p-6 bg-white text-[#1C1C1E] rounded-2xl border-2 border-[#D4AF37]/50 shadow-xl space-y-3 relative">
               <div className="w-10 h-10 rounded-xl bg-[#D93829] text-white flex items-center justify-center font-black text-base shadow-md">
                 1
               </div>
@@ -216,7 +189,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-white text-[#1C1C1E] rounded-2xl border-2 border-[#D4AF37]/50 shadow-xl space-y-3 relative transform hover:scale-[1.02] transition-transform">
+            <div className="p-6 bg-white text-[#1C1C1E] rounded-2xl border-2 border-[#D4AF37]/50 shadow-xl space-y-3 relative">
               <div className="w-10 h-10 rounded-xl bg-[#D93829] text-white flex items-center justify-center font-black text-base shadow-md">
                 2
               </div>
@@ -226,7 +199,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-white text-[#1C1C1E] rounded-2xl border-2 border-[#D4AF37]/50 shadow-xl space-y-3 relative transform hover:scale-[1.02] transition-transform">
+            <div className="p-6 bg-white text-[#1C1C1E] rounded-2xl border-2 border-[#D4AF37]/50 shadow-xl space-y-3 relative">
               <div className="w-10 h-10 rounded-xl bg-[#D93829] text-white flex items-center justify-center font-black text-base shadow-md">
                 3
               </div>
