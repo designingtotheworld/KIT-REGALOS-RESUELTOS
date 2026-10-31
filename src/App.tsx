@@ -114,11 +114,11 @@ export default function App() {
               <span>Quiero mi kit por solo $12 USD</span>
             </a>
 
-            <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center order-1 sm:order-2">
+            <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 flex items-center justify-center order-1 sm:order-2">
               <img 
                 src="https://i.imgur.com/TOdn8ow.png" 
                 alt="Papá Noel Zen" 
-                className="w-full h-full object-contain animate-zen filter drop-shadow-md"
+                className="w-full h-full object-contain animate-zen filter drop-shadow-lg"
                 referrerPolicy="no-referrer"
               />
             </div>
