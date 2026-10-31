@@ -6,13 +6,14 @@
 import React, { useState } from 'react';
 import { 
   Gift, Sparkles, Check, ChevronRight, ChevronLeft, ShieldCheck, 
-  Clock, AlertCircle, HelpCircle, Package, Play, ShoppingCart, Star, Plus, Flame, Award
+  Clock, AlertCircle, HelpCircle, Package, Play, ShoppingCart, Star, Plus, Flame, Award, Video, FileText
 } from 'lucide-react';
 
 export default function App() {
   const [imageError, setImageError] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [upsellSelected, setUpsellSelected] = useState(false);
+  const [bonusImgUrl, setBonusImgUrl] = useState('');
 
   // Dynamic today's date in Spanish for urgency banner
   const todayFormatted = new Date().toLocaleDateString('es-ES', { 
@@ -31,6 +32,7 @@ export default function App() {
     "https://i.imgur.com/5ND6nB8.jpeg",
     "https://i.imgur.com/SYZLJGr.jpeg",
     "https://i.imgur.com/x3gTi4P.jpeg",
+    "https://i.imgur.com/yk5gz8F.jpeg",
   ];
 
   const faqs = [
@@ -42,7 +44,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FAF9F5] text-[#1C1C1E] font-sans antialiased selection:bg-[#E05A47]/20 selection:text-[#E05A47]">
-      {/* CSS KEYFRAMES FOR BELL SWINGING ANIMATION */}
+      {/* CSS KEYFRAMES FOR BELL SWINGING & ZEN ANIMATION */}
       <style>{`
         @keyframes ring {
           0% { transform: rotate(0deg); }
@@ -56,6 +58,13 @@ export default function App() {
           animation: ring 1.1s ease-in-out infinite;
           display: inline-block;
           transform-origin: top center;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        .animate-zen {
+          animation: float 4s ease-in-out infinite;
         }
       `}</style>
 
@@ -91,7 +100,7 @@ export default function App() {
         {/* HERO SUBHEADLINE & CTA */}
         <section className="text-center max-w-4xl mx-auto space-y-6 pt-2">
           <p className="text-xl md:text-2xl font-medium text-[#6E6E73] max-w-3xl mx-auto leading-relaxed">
-            10 ideas de regalos + archivos listos para mandar a imprimir y armar regalos únicos desde tu casa, aunque nunca lo hayas hecho antes.
+            10 ideas de regalos con sus kits imprimibles para armar más de 50 regalos únicos desde tu casa, aunque nunca lo hayas hecho antes.
           </p>
 
           <div className="pt-2 flex justify-center">
@@ -102,8 +111,31 @@ export default function App() {
               className="px-8 py-4 bg-[#D93829] text-white font-extrabold text-base rounded-2xl hover:bg-[#C02F21] transition-colors shadow-lg shadow-red-600/25 inline-flex items-center gap-3"
             >
               <ShoppingCart className="w-5 h-5 text-white" />
-              <span>Quiero mi kit con 50% OFF</span>
+              <span>Quiero mi kit por solo $12 USD</span>
             </a>
+          </div>
+
+          {/* PAPÁ NOEL ZEN ANIMADO TIPO GIF */}
+          <div className="pt-8 max-w-sm mx-auto">
+            <div className="bg-white/95 border-2 border-[#D4AF37] rounded-3xl p-6 shadow-xl text-center space-y-3 relative overflow-hidden">
+              <div className="absolute top-2 right-2 text-xs font-black bg-[#D4AF37] text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
+                🧘‍♂️ Modo Zen Activo
+              </div>
+              <div className="w-48 h-48 mx-auto flex items-center justify-center pt-2">
+                <img 
+                  src="https://i.imgur.com/TOdn8ow.png" 
+                  alt="Papá Noel Zen Regalos Resueltos" 
+                  className="w-full h-full object-contain animate-zen filter drop-shadow-md"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-black text-base text-[#1C1C1E]">Papá Noel Zen & Tranquilo</h4>
+                <p className="text-xs text-[#6E6E73] leading-relaxed">
+                  "Con los kits de Regalos Resueltos, ya tengo todo listo sin estrés. ¡Paz mental garantizada estas fiestas!"
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -129,7 +161,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* GALERÍA DE LAS 10 IDEAS DE REGALO */}
+        {/* GALERÍA DE LAS 10 IDEAS DE REGALO (EDGE TO EDGE, NO ROUNDED CORNERS) */}
         <section className="space-y-12 bg-white/80 border border-[#E5E5EA] rounded-3xl p-8 md:p-14 shadow-sm">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#D93829] text-white font-extrabold text-xs uppercase tracking-widest border border-[#D4AF37] shadow-sm">
@@ -147,22 +179,18 @@ export default function App() {
             {giftIdeas.map((imgUrl, idx) => (
               <div 
                 key={idx} 
-                className="bg-[#FAF9F5] border-2 border-[#D4AF37] rounded-3xl p-4 md:p-6 shadow-lg overflow-hidden flex flex-col items-center justify-center"
+                className="bg-white border-2 border-[#D4AF37] rounded-none shadow-lg overflow-hidden flex flex-col items-center justify-center p-0"
               >
-                <div className="w-full bg-white rounded-2xl overflow-hidden shadow-inner flex items-center justify-center">
-                  <img 
-                    src={imgUrl} 
-                    alt={`Regalo #${idx + 1}`} 
-                    className="w-full h-auto object-contain"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
+                <img 
+                  src={imgUrl} 
+                  alt={`Regalo #${idx + 1}`} 
+                  className="w-full h-auto object-contain block m-0 p-0"
+                  referrerPolicy="no-referrer"
+                />
               </div>
             ))}
           </div>
         </section>
-
-
 
         {/* CÓMO FUNCIONA / CÓMO SE USA (ESTILO NAVIDEÑO ROJO Y DORADO) */}
         <section className="bg-gradient-to-br from-[#B31942] via-[#990000] to-[#700D22] border-2 border-[#D4AF37] rounded-3xl p-8 md:p-12 shadow-2xl space-y-10 text-white relative overflow-hidden">
@@ -218,104 +246,165 @@ export default function App() {
               className="px-8 py-4 bg-white hover:bg-amber-50 text-[#996515] border-2 border-[#D4AF37] font-black text-sm uppercase tracking-wider rounded-2xl shadow-xl transition-all inline-flex items-center gap-2"
             >
               <ShoppingCart className="w-5 h-5 text-[#D4AF37]" />
-              <span>Quiero mi kit con 50% OFF</span>
+              <span>Quiero mi kit por solo $12 USD</span>
             </a>
           </div>
         </section>
 
-        {/* VALUE STACK */}
-        <section className="bg-white border border-[#E5E5EA] rounded-3xl p-8 md:p-10 shadow-sm space-y-8">
-          <div className="text-center max-w-xl mx-auto space-y-2">
-            <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-[#1C1C1E]">
-              Todo lo que recibís hoy al adquirir el Kit
-            </h3>
-            <p className="text-sm text-[#6E6E73]">Desglose del valor real de cada componente.</p>
-          </div>
+        {/* SINGLE CONSOLIDATED VALUE STACK CARD ("TODO LO QUE RECIBÍS HOY") */}
+        <section className="max-w-3xl mx-auto">
+          <div className="bg-white border-4 border-[#D4AF37] rounded-3xl p-8 md:p-12 shadow-2xl space-y-8 relative overflow-hidden">
+            {/* Top Badge */}
+            <div className="text-center space-y-3">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#996515] text-white font-extrabold text-xs uppercase tracking-widest shadow-sm">
+                <Package className="w-4 h-4 text-[#D4AF37]" /> Paquete Completo Todo Incluido
+              </span>
+              <h3 className="text-2xl md:text-4xl font-black tracking-tight text-[#1C1C1E]">
+                Todo lo que recibís hoy al adquirir el Kit
+              </h3>
+              <p className="text-xs md:text-sm text-[#6E6E73] max-w-lg mx-auto">
+                Acceso inmediato y vitalicio a todo el material profesional para resolver tus regalos de fin de año.
+              </p>
+            </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-[#E5E5EA] text-[#6E6E73] text-xs uppercase tracking-wider">
-                  <th className="py-3 px-4">Componente del Kit</th>
-                  <th className="py-3 px-4">Valor Percibido</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#E5E5EA]">
-                <tr>
-                  <td className="py-4 px-4 font-medium text-[#1C1C1E]">10 Diseños exclusivos para DTF Textil y DTF UV</td>
-                  <td className="py-4 px-4 text-[#6E6E73]">$49.00 USD</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-4 font-medium text-[#1C1C1E]">Guía paso a paso para estampar con la plancha casera</td>
-                  <td className="py-4 px-4 text-[#6E6E73]">$25.00 USD</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-4 font-medium text-[#1C1C1E]">Guía de proveedores en MercadoLibre (Bolsas, Tazas, Vasos)</td>
-                  <td className="py-4 px-4 text-[#6E6E73]">$35.00 USD</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-4 font-medium text-[#1C1C1E]">🎁 BONO: Pack de etiquetas navideñas imprimibles</td>
-                  <td className="py-4 px-4 text-[#6E6E73]">$15.00 USD</td>
-                </tr>
-                <tr className="bg-[#FAF9F5] font-bold">
-                  <td className="py-4 px-4 text-[#1C1C1E]">VALOR TOTAL COMBINADO</td>
-                  <td className="py-4 px-4 text-slate-500 line-through">$124.00 USD</td>
-                </tr>
-                <tr className="bg-[#E05A47]/10 text-[#E05A47] font-extrabold text-base">
-                  <td className="py-4 px-4">PRECIO HOY (ACCESO VITALICIO)</td>
-                  <td className="py-4 px-4">$29.00 USD</td>
-                </tr>
-              </tbody>
-            </table>
+            {/* Checklist of Deliverables in One Card */}
+            <div className="space-y-4 bg-[#FAF9F5] border border-[#D4AF37]/30 rounded-2xl p-6 shadow-inner">
+              <div className="flex items-start gap-4 pb-4 border-b border-[#E5E5EA]">
+                <div className="w-10 h-10 rounded-xl bg-red-100 text-[#D93829] flex items-center justify-center shrink-0 font-black shadow-sm">
+                  ✓
+                </div>
+                <div className="flex-1 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">10 Ideas de Regalo con Kits Imprimibles</h4>
+                    <span className="text-xs font-bold text-slate-400 line-through">$49 USD</span>
+                  </div>
+                  <p className="text-xs text-[#6E6E73] leading-relaxed">
+                    Archivos vectoriales y PNG 300 DPI listos para mandar a imprimir y armar <strong className="text-[#1C1C1E]">más de 50 regalos únicos</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 pb-4 border-b border-[#E5E5EA]">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-[#996515] flex items-center justify-center shrink-0 font-black shadow-sm">
+                  ✓
+                </div>
+                <div className="flex-1 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">2 Videos Explicativos Paso a Paso</h4>
+                    <span className="text-xs font-bold text-slate-400 line-through">$25 USD</span>
+                  </div>
+                  <p className="text-xs text-[#6E6E73] leading-relaxed">
+                    Clases en video donde te mostramos cómo manipular los archivos, mandar a imprimir y aplicar la técnica de estampado en casa.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-[#996515] flex items-center justify-center shrink-0 font-black shadow-sm">
+                  ✓
+                </div>
+                <div className="flex-1 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">Guía Exclusiva para Canva</h4>
+                    <span className="text-xs font-bold text-slate-400 line-through">$35 USD</span>
+                  </div>
+                  <p className="text-xs text-[#6E6E73] leading-relaxed">
+                    Aprende a personalizar nombres, agregar frases y diseñar tus propios templates desde cero utilizando Canva de forma gratuita.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Price Box inside the Single Card */}
+            <div className="bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] rounded-2xl p-6 md:p-8 text-white shadow-xl text-center space-y-4">
+              <div className="space-y-1">
+                <span className="text-[11px] font-black uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full">
+                  🔥 OFERTA DE LANZAMIENTO
+                </span>
+                <p className="text-xs font-medium opacity-90 pt-1">Valor total combinado: <span className="line-through font-bold">$109 USD</span></p>
+              </div>
+
+              <div className="flex items-baseline justify-center gap-3">
+                <span className="text-base opacity-80">HOY POR SOLO:</span>
+                <span className="text-4xl md:text-5xl font-black tracking-tight">$12 <span className="text-xl font-bold">USD</span></span>
+              </div>
+
+              <div className="pt-1 flex justify-center">
+                <a 
+                  href="https://patatas-store.impultienda.ar/checkout" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-8 py-3.5 bg-[#1C1C1E] text-white hover:bg-black font-black text-sm uppercase tracking-wider rounded-xl shadow-xl transition-all inline-flex items-center justify-center gap-2 border-2 border-white/30"
+                >
+                  <ShoppingCart className="w-4 h-4 text-[#D4AF37]" />
+                  <span>Obtener Acceso Vitalicio por $12 USD</span>
+                </a>
+              </div>
+              
+              <p className="text-[10px] opacity-90">🔒 Pago 100% seguro • Acceso inmediato</p>
+            </div>
           </div>
         </section>
 
-        {/* BONOS EXCLUSIVOS ("LOS BONOS" / "NONOS") */}
-        <section className="space-y-8">
+        {/* BONOS EXCLUSIVOS ("LOS BONOS") */}
+        <section className="space-y-8 max-w-2xl mx-auto">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#E05A47] px-3 py-1 bg-[#E05A47]/10 rounded-full">
               Regalos de Bienvenida Especiales
             </span>
             <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-[#1C1C1E]">
-              Bonos Exclusivos Incluidos Gratis Hoy
+              Bono Exclusivo Incluido Gratis Hoy
             </h3>
             <p className="text-sm text-[#6E6E73]">
-              Accede a estos 3 bonos valorados en $65 USD sin costo adicional al comprar hoy.
+              Accede a este bono valorado en $25 USD sin costo adicional al comprar hoy.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white border-2 border-[#D4AF37]/50 rounded-2xl p-6 space-y-3 shadow-md relative overflow-hidden">
-              <span className="absolute top-0 right-0 bg-[#D4AF37] text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl">VALOR $15 USD</span>
-              <div className="w-10 h-10 rounded-xl bg-amber-100 text-[#996515] flex items-center justify-center font-bold">
-                🎁
+          <div className="space-y-4">
+            {bonusImgUrl ? (
+              <div className="bg-white border-2 border-[#D4AF37] rounded-none shadow-lg overflow-hidden flex flex-col items-center justify-center p-0">
+                <img 
+                  src={bonusImgUrl} 
+                  alt="Bono Exclusivo" 
+                  className="w-full h-auto object-contain block m-0 p-0"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-              <h4 className="text-base font-bold text-[#1C1C1E]">Etiquetas Navideñas Imprimibles</h4>
-              <p className="text-xs text-[#6E6E73] leading-relaxed">
-                Tags con diseños listos para imprimir, recortar y colocar en cada uno de tus paquetes y regalos terminados.
-              </p>
-            </div>
+            ) : (
+              <div className="bg-white border-2 border-[#D4AF37] rounded-none shadow-lg overflow-hidden p-6 space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="bg-[#D4AF37] text-white text-[10px] font-black uppercase px-3 py-1">VALOR $25 USD</span>
+                  <span className="text-xs text-amber-700 font-bold">🎁 Bono Especial</span>
+                </div>
+                <h4 className="text-lg font-extrabold text-[#1C1C1E]">Guía y Video con Plancha Casera</h4>
+                <p className="text-xs text-[#6E6E73] leading-relaxed">
+                  Aprende la temperatura y presión exacta usando la plancha de ropa de tu casa para lograr fijación profesional.
+                </p>
+              </div>
+            )}
 
-            <div className="bg-white border-2 border-[#D4AF37]/50 rounded-2xl p-6 space-y-3 shadow-md relative overflow-hidden">
-              <span className="absolute top-0 right-0 bg-[#D4AF37] text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl">VALOR $25 USD</span>
-              <div className="w-10 h-10 rounded-xl bg-amber-100 text-[#996515] flex items-center justify-center font-bold">
-                ⚡
+            {/* Optional Imgur input for the bonus image if user wants to paste it */}
+            <div className="bg-white border border-[#E5E5EA] rounded-2xl p-4 text-center space-y-2 shadow-sm">
+              <label className="block text-xs font-bold text-[#6E6E73]">
+                ¿Tenés el link de Imgur del bono? Pégalo aquí para mostrar la imagen exacta:
+              </label>
+              <div className="flex gap-2">
+                <input 
+                  type="text" 
+                  value={bonusImgUrl} 
+                  onChange={(e) => setBonusImgUrl(e.target.value)} 
+                  placeholder="https://i.imgur.com/..." 
+                  className="flex-1 px-3 py-2 text-xs border border-[#E5E5EA] rounded-xl focus:outline-none focus:border-[#D4AF37]"
+                />
+                {bonusImgUrl && (
+                  <button 
+                    onClick={() => setBonusImgUrl('')}
+                    className="px-3 py-2 bg-slate-200 text-slate-700 rounded-xl text-xs font-bold hover:bg-slate-300 transition-colors"
+                  >
+                    Reset
+                  </button>
+                )}
               </div>
-              <h4 className="text-base font-bold text-[#1C1C1E]">Guía y Video con Plancha Casera</h4>
-              <p className="text-xs text-[#6E6E73] leading-relaxed">
-                Aprende la temperatura y presión exacta usando la plancha de ropa de tu casa para lograr fijación profesional.
-              </p>
-            </div>
-
-            <div className="bg-white border-2 border-[#D4AF37]/50 rounded-2xl p-6 space-y-3 shadow-md relative overflow-hidden">
-              <span className="absolute top-0 right-0 bg-[#D4AF37] text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl">VALOR $35 USD</span>
-              <div className="w-10 h-10 rounded-xl bg-amber-100 text-[#996515] flex items-center justify-center font-bold">
-                📦
-              </div>
-              <h4 className="text-base font-bold text-[#1C1C1E]">Proveedores en MercadoLibre</h4>
-              <p className="text-xs text-[#6E6E73] leading-relaxed">
-                Listado directo de proveedores económicos para comprar tote bags, neceseres, tazas y vasos por cantidad al mejor precio.
-              </p>
             </div>
           </div>
         </section>
@@ -406,7 +495,7 @@ export default function App() {
               Haz que esta Navidad sea inolvidable
             </h3>
             <p className="text-sm text-[#6E6E73] max-w-lg mx-auto">
-              Obtén el kit completo {upsellSelected ? '+ la colección extra minimalista' : ''} hoy mismo por solo <strong className="text-[#1C1C1E] text-base">${29 + (upsellSelected ? 9 : 0)} USD</strong>.
+              Obtén el kit completo {upsellSelected ? '+ la colección extra minimalista' : ''} hoy mismo por solo <strong className="text-[#1C1C1E] text-base">${12 + (upsellSelected ? 9 : 0)} USD</strong>.
             </p>
           </div>
 
@@ -417,7 +506,7 @@ export default function App() {
             className="w-full sm:w-auto px-10 py-4 bg-[#D93829] border-2 border-[#D4AF37] text-white font-extrabold rounded-2xl hover:bg-[#C02F21] transition-colors shadow-lg shadow-red-600/25 text-base inline-flex items-center justify-center gap-3"
           >
             <ShoppingCart className="w-5 h-5 text-[#D4AF37]" />
-            <span>Quiero mi kit con 50% OFF</span>
+            <span>Quiero mi kit por solo $12 USD</span>
           </a>
 
           <div className="pt-6 border-t border-[#E5E5EA] space-y-2 text-xs text-[#6E6E73]">
