@@ -103,38 +103,24 @@ export default function App() {
             10 ideas de regalos con sus kits imprimibles para armar más de 50 regalos únicos desde tu casa, aunque nunca lo hayas hecho antes.
           </p>
 
-          <div className="pt-2 flex justify-center">
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6">
             <a 
               href="https://patatas-store.impultienda.ar/checkout" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#D93829] text-white font-extrabold text-base rounded-2xl hover:bg-[#C02F21] transition-colors shadow-lg shadow-red-600/25 inline-flex items-center gap-3"
+              className="px-8 py-4 bg-[#D93829] text-white font-extrabold text-base rounded-2xl hover:bg-[#C02F21] transition-colors shadow-lg shadow-red-600/25 inline-flex items-center gap-3 order-2 sm:order-1"
             >
               <ShoppingCart className="w-5 h-5 text-white" />
               <span>Quiero mi kit por solo $12 USD</span>
             </a>
-          </div>
 
-          {/* PAPÁ NOEL ZEN ANIMADO TIPO GIF */}
-          <div className="pt-8 max-w-sm mx-auto">
-            <div className="bg-white/95 border-2 border-[#D4AF37] rounded-3xl p-6 shadow-xl text-center space-y-3 relative overflow-hidden">
-              <div className="absolute top-2 right-2 text-xs font-black bg-[#D4AF37] text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
-                🧘‍♂️ Modo Zen Activo
-              </div>
-              <div className="w-48 h-48 mx-auto flex items-center justify-center pt-2">
-                <img 
-                  src="https://i.imgur.com/TOdn8ow.png" 
-                  alt="Papá Noel Zen Regalos Resueltos" 
-                  className="w-full h-full object-contain animate-zen filter drop-shadow-md"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="space-y-1">
-                <h4 className="font-black text-base text-[#1C1C1E]">Papá Noel Zen & Tranquilo</h4>
-                <p className="text-xs text-[#6E6E73] leading-relaxed">
-                  "Con los kits de Regalos Resueltos, ya tengo todo listo sin estrés. ¡Paz mental garantizada estas fiestas!"
-                </p>
-              </div>
+            <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center order-1 sm:order-2">
+              <img 
+                src="https://i.imgur.com/TOdn8ow.png" 
+                alt="Papá Noel Zen" 
+                className="w-full h-full object-contain animate-zen filter drop-shadow-md"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </section>
