@@ -12,7 +12,6 @@ import {
 export default function App() {
   const [imageError, setImageError] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [upsellSelected, setUpsellSelected] = useState(false);
   const [bonusImgUrl, setBonusImgUrl] = useState('');
 
   // Dynamic today's date in Spanish for urgency banner
@@ -66,6 +65,13 @@ export default function App() {
         .animate-zen {
           animation: float 4s ease-in-out infinite;
         }
+        @keyframes blink-light {
+          0%, 100% { opacity: 0.3; transform: scale(0.9); }
+          50% { opacity: 1; transform: scale(1.2); filter: drop-shadow(0 0 10px #FFD700); }
+        }
+        .garland-light-1 { animation: blink-light 0.9s ease-in-out infinite; }
+        .garland-light-2 { animation: blink-light 0.9s ease-in-out infinite 0.3s; }
+        .garland-light-3 { animation: blink-light 0.9s ease-in-out infinite 0.6s; }
       `}</style>
 
       {/* TOP URGENCY BANNER WITH SWINGING BELLS & WHITE GAP */}
@@ -84,7 +90,7 @@ export default function App() {
           <img 
             src="https://i.imgur.com/dmuw46z.jpeg" 
             alt="Regalos Resueltos - Promesa Principal" 
-            className="w-full h-auto object-cover shadow-sm mx-auto max-w-5xl"
+            className="w-full h-auto object-cover shadow-sm"
             referrerPolicy="no-referrer"
             onError={() => setImageError(true)}
           />
@@ -108,10 +114,13 @@ export default function App() {
               href="https://patatas-store.impultienda.ar/checkout" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#D93829] text-white font-extrabold text-base rounded-2xl hover:bg-[#C02F21] transition-colors shadow-lg shadow-red-600/25 inline-flex items-center gap-3 order-2 sm:order-1"
+              className="px-8 py-5 bg-[#1B4D3E] text-white font-extrabold rounded-2xl hover:bg-[#143B30] transition-colors shadow-xl shadow-emerald-900/30 flex flex-col items-center justify-center text-center gap-1 order-2 sm:order-1 border-2 border-[#D4AF37]"
             >
-              <ShoppingCart className="w-5 h-5 text-white" />
-              <span>Quiero mi kit por solo $12 USD</span>
+              <div className="flex items-center gap-2">
+                <ShoppingCart className="w-5 h-5 text-[#D4AF37]" />
+                <span className="text-sm md:text-base uppercase tracking-wider font-extrabold">QUIERO MI KIT</span>
+              </div>
+              <span className="text-2xl md:text-3xl font-black text-[#FFF8DC] tracking-tight">POR $12.5 USD</span>
             </a>
 
             <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 flex items-center justify-center order-1 sm:order-2">
@@ -229,165 +238,226 @@ export default function App() {
               href="https://patatas-store.impultienda.ar/checkout" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#D93829] hover:bg-[#b52d20] text-white border-2 border-[#D4AF37] font-black text-sm uppercase tracking-wider rounded-2xl shadow-xl transition-all inline-flex items-center gap-2"
+              className="px-8 py-4 bg-[#1B4D3E] hover:bg-[#143B30] text-white border-2 border-[#D4AF37] font-black text-sm uppercase tracking-wider rounded-2xl shadow-xl transition-all inline-flex items-center gap-2"
             >
               <ShoppingCart className="w-5 h-5 text-[#D4AF37]" />
-              <span>Quiero resolver mi kit regalos resueltos</span>
+              <span>QUIERO MI KIT DIGITAL REGALOS RESUELTOS</span>
             </a>
           </div>
         </section>
 
         {/* SINGLE CONSOLIDATED VALUE STACK CARD ("TODO LO QUE RECIBÍS HOY") */}
         <section className="max-w-3xl mx-auto">
-          <div className="bg-white border-4 border-[#D4AF37] rounded-3xl p-6 md:p-10 shadow-2xl space-y-8 relative overflow-hidden">
-            {/* Top Graphic Base Image */}
-            <div className="rounded-2xl overflow-hidden border-2 border-[#D4AF37] shadow-lg bg-[#FAF9F5]">
+          <div className="bg-white border-4 border-[#D4AF37] rounded-3xl overflow-hidden shadow-2xl space-y-8">
+            {/* Top Graphic Base Image (Edge-to-edge, no rounded corners) */}
+            <div className="w-full m-0 p-0 bg-[#FAF9F5]">
               <img 
                 src="https://i.imgur.com/0M1eeP4.png" 
                 alt="Kit Regalos Resueltos - Todo lo que recibís" 
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover m-0 p-0 rounded-none block"
                 referrerPolicy="no-referrer"
               />
             </div>
 
-            {/* Top Badge & Title */}
-            <div className="text-center space-y-3">
-              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#996515] text-white font-extrabold text-xs uppercase tracking-widest shadow-sm">
-                <Package className="w-4 h-4 text-[#D4AF37]" /> Paquete Completo Todo Incluido
-              </span>
-              <h3 className="text-2xl md:text-3xl font-black tracking-tight text-[#1C1C1E]">
-                Todo lo que recibís hoy al adquirir el Kit
-              </h3>
-              <p className="text-xs md:text-sm text-[#6E6E73] max-w-lg mx-auto">
-                Acceso inmediato y vitalicio a todo el material profesional para resolver tus regalos de fin de año.
+            <div className="p-6 md:p-10 space-y-8">
+              {/* Top Badge & Title */}
+              <div className="text-center space-y-3">
+                <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#996515] text-white font-extrabold text-xs uppercase tracking-widest shadow-sm">
+                  <Package className="w-4 h-4 text-[#D4AF37]" /> Paquete Completo Todo Incluido
+                </span>
+                <h3 className="text-2xl md:text-3xl font-black tracking-tight text-[#1C1C1E]">
+                  Todo lo que recibís hoy al adquirir el Kit
+                </h3>
+                <p className="text-xs md:text-sm text-[#6E6E73] max-w-lg mx-auto">
+                  Acceso inmediato y vitalicio a todo el material profesional para resolver tus regalos de fin de año.
+                </p>
+              </div>
+
+            {/* Checklist of Deliverables in One Card */}
+            <div className="space-y-6 bg-[#FAF9F5] border border-[#D4AF37]/30 rounded-2xl p-6 md:p-8 shadow-inner">
+              {/* Check 1 */}
+              <div className="flex items-start gap-4 pb-6 border-b border-[#E5E5EA]">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8860B] text-white flex items-center justify-center shrink-0 font-black shadow-md">
+                  ✓
+                </div>
+                <div className="flex-1 space-y-2">
+                  <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">10 KITS PARA ARMAR 10 IDEAS DE REGALO</h4>
+                  <p className="text-xs text-[#6E6E73] leading-relaxed">
+                    Archivos PNG 300 DPI listos para mandar a imprimir y armar <strong className="text-[#1C1C1E]">más de 50 regalos únicos</strong>.
+                  </p>
+                  <div className="pt-1 font-black text-sm">
+                    <span className="line-through text-red-600 font-extrabold mr-2">$25 USD</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Check 2 */}
+              <div className="flex items-start gap-4 pb-6 border-b border-[#E5E5EA]">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8860B] text-white flex items-center justify-center shrink-0 font-black shadow-md">
+                  ✓
+                </div>
+                <div className="flex-1 space-y-2">
+                  <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">VIDEOS EXPLICATIVOS + GUÍA EXCLUSIVA CANVA</h4>
+                  <p className="text-xs text-[#6E6E73] leading-relaxed">
+                    Como te mostramos en videos simples y cortos, el proceso de cómo estampar tus objetos con la plancha que tenés en casa y cómo aplicar el DTF UV en tus objetos rígidos.
+                  </p>
+                  <div className="pt-1 flex items-center gap-3 font-black text-sm">
+                    <span className="line-through text-red-600 font-extrabold">$10 USD</span>
+                    <span className="bg-[#1B4D3E] text-white text-xs font-black px-3 py-1 rounded-full shadow-sm">GRATIS CON TU KIT</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Check 3 */}
+              <div className="flex items-start gap-4 pb-6 border-b border-[#E5E5EA]">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8860B] text-white flex items-center justify-center shrink-0 font-black shadow-md">
+                  ✓
+                </div>
+                <div className="flex-1 space-y-2">
+                  <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">TAGS PARA REGALOS IMPRIMIBLES</h4>
+                  <p className="text-xs text-[#6E6E73] leading-relaxed">
+                    Diseños de etiquetas y tags navideños a juego para una presentación impecable.
+                  </p>
+                  <div className="pt-1 flex items-center gap-3 font-black text-sm">
+                    <span className="line-through text-red-600 font-extrabold">US$5</span>
+                    <span className="bg-[#1B4D3E] text-white text-xs font-black px-3 py-1 rounded-full shadow-sm">GRATIS CON TU KIT</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bonus Exclusive Header inside checklist */}
+              <div className="pt-2 space-y-4">
+                <div className="bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] rounded-2xl p-4 text-white shadow-xl flex items-center justify-between border-2 border-white/40">
+                  <div className="flex items-center gap-3">
+                    <span className="text-3xl animate-bounce">🎁</span>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-widest font-bold opacity-90 text-amber-100">Regalo Especial</p>
+                      <h4 className="text-lg md:text-xl font-black tracking-tight text-white drop-shadow-sm">BONO EXCLUSIVO</h4>
+                    </div>
+                  </div>
+                  <span className="text-xs font-black bg-[#1B4D3E] text-white px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/30 shadow-md">
+                    100% GRATIS HOY
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bonus Image Absolute Margin-to-Margin with Pinterest Warm White Fairy Lights Garland */}
+            <div className="w-full bg-white border-y-4 border-[#D4AF37] shadow-2xl overflow-hidden relative p-0 m-0">
+              {/* Garland lights top bar - Pinterest warm white style */}
+              <div className="absolute top-0 inset-x-0 h-5 bg-[#1B4D3E] flex items-center justify-around px-4 z-10 border-b border-[#D4AF37]">
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+              </div>
+
+              <img 
+                src="https://i.imgur.com/ECPthhX.png" 
+                alt="Bono Exclusivo" 
+                className="w-full h-auto object-cover m-0 p-0 block pt-5 pb-5"
+                referrerPolicy="no-referrer"
+              />
+
+              {/* Garland lights bottom bar - Pinterest warm white style */}
+              <div className="absolute bottom-0 inset-x-0 h-5 bg-[#1B4D3E] flex items-center justify-around px-4 z-10 border-t border-[#D4AF37]">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
+              </div>
+            </div>
+
+            <div className="p-6 md:p-10 pt-2 space-y-6">
+              <p className="text-xs text-[#6E6E73] text-center italic font-medium">
+                Kit de etiquetas y presentación incluido 100% gratis con tu compra hoy.
               </p>
             </div>
 
-            {/* Checklist of Deliverables in One Card */}
-            <div className="space-y-4 bg-[#FAF9F5] border border-[#D4AF37]/30 rounded-2xl p-6 shadow-inner">
-              <div className="flex items-start gap-4 pb-4 border-b border-[#E5E5EA]">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8860B] text-white flex items-center justify-center shrink-0 font-black shadow-md">
-                  ✓
-                </div>
-                <div className="flex-1 space-y-1">
-                  <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">10 Ideas de Regalo con Kits Imprimibles</h4>
-                  <p className="text-xs text-[#6E6E73] leading-relaxed">
-                    Archivos vectoriales y PNG 300 DPI listos para mandar a imprimir y armar <strong className="text-[#1C1C1E]">más de 50 regalos únicos</strong>.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 pb-4 border-b border-[#E5E5EA]">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8860B] text-white flex items-center justify-center shrink-0 font-black shadow-md">
-                  ✓
-                </div>
-                <div className="flex-1 space-y-1">
-                  <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">2 Videos Explicativos Paso a Paso</h4>
-                  <p className="text-xs text-[#6E6E73] leading-relaxed">
-                    Clases en video donde te mostramos cómo manipular los archivos, mandar a imprimir y aplicar la técnica de estampado en casa.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 pb-4 border-b border-[#E5E5EA]">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8860B] text-white flex items-center justify-center shrink-0 font-black shadow-md">
-                  ✓
-                </div>
-                <div className="flex-1 space-y-1">
-                  <h4 className="font-extrabold text-sm md:text-base text-[#1C1C1E]">Guía Exclusiva para Canva</h4>
-                  <p className="text-xs text-[#6E6E73] leading-relaxed">
-                    Aprende a personalizar nombres, agregar frases y diseñar tus propios templates desde cero utilizando Canva de forma gratuita.
-                  </p>
-                </div>
-              </div>
-
-              {/* Bonus Exclusive with Tags at the end of the summary */}
-              <div className="pt-2 space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-black text-[#D93829] uppercase tracking-wider flex items-center gap-1">
-                    🎁 Bono Exclusivo (Regalo Especial con Tags)
-                  </span>
-                  <span className="text-xs font-black bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full uppercase tracking-wider">
-                    GRATIS HOY
-                  </span>
-                </div>
-                <div className="rounded-2xl overflow-hidden border-2 border-[#D4AF37] bg-white shadow-lg p-2">
-                  <img 
-                    src="https://i.imgur.com/ECPthhX.png" 
-                    alt="Bono Exclusivo con Tags" 
-                    className="w-full h-auto object-cover max-h-72 mx-auto rounded-xl"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <p className="text-xs text-[#6E6E73] text-center italic">
-                  Kit de etiquetas y presentación incluido 100% gratis con tu compra hoy.
-                </p>
-              </div>
-            </div>
-
             {/* Price Box inside the Single Card */}
-            <div className="bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] rounded-2xl p-6 md:p-8 text-white shadow-xl text-center space-y-4">
-              <div className="space-y-1">
-                <span className="text-[11px] font-black uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full">
-                  🔥 OFERTA DE LANZAMIENTO (50% OFF)
+            <div className="bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] rounded-3xl p-6 md:p-10 text-white shadow-2xl text-center space-y-6 border-2 border-white/60">
+              <div className="space-y-2">
+                <span className="text-xs md:text-sm font-black uppercase tracking-widest bg-white/25 px-5 py-2 rounded-full inline-block shadow-sm">
+                  🔥 OFERTA DE LANZAMIENTO IRRESISTIBLE
                 </span>
-                <p className="text-xs font-medium opacity-90 pt-1">Valor regular: <span className="line-through font-black text-sm text-white decoration-white/90">$25 USD</span></p>
+                <p className="text-sm font-medium opacity-90 pt-1">Valor regular anterior: <span className="line-through font-black text-base text-white decoration-white">$25 USD</span></p>
               </div>
 
-              <div className="flex items-baseline justify-center gap-3">
-                <span className="text-base opacity-80">HOY POR SOLO:</span>
-                <span className="text-4xl md:text-5xl font-black tracking-tight">$12 <span className="text-xl font-bold">USD</span></span>
+              {/* Price displayed very big, clear and easy to read */}
+              <div className="bg-white/15 backdrop-blur-md rounded-3xl p-6 border-2 border-white/40 inline-block px-10 py-5 shadow-inner">
+                <p className="text-xs md:text-sm uppercase tracking-widest font-black opacity-95 text-amber-100">SOLO HOY PAGÁS</p>
+                <p className="text-6xl md:text-7xl font-black tracking-tight text-white drop-shadow-lg">$12.5 <span className="text-2xl md:text-3xl font-extrabold text-[#FFF8DC]">USD</span></p>
               </div>
 
-              <div className="pt-1 flex justify-center">
+              {/* Two Separate Checkout Buttons: Argentina (Mercado Pago) & Exterior (Dólares) */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                {/* Button Argentina - Mercado Pago */}
                 <a 
                   href="https://patatas-store.impultienda.ar/checkout" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-8 py-3.5 bg-[#1C1C1E] text-white hover:bg-black font-black text-sm uppercase tracking-wider rounded-xl shadow-xl transition-all inline-flex items-center justify-center gap-2 border-2 border-white/30"
+                  className="w-full sm:w-1/2 px-6 py-4 bg-[#009EE3] hover:bg-[#0082BD] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-white/60"
                 >
-                  <ShoppingCart className="w-4 h-4 text-[#D4AF37]" />
-                  <span>Obtener Acceso Vitalicio por $12 USD</span>
+                  <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
+                    <span className="text-[#009EE3] font-black text-xs">💙</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
+                    <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
+                  </div>
+                </a>
+
+                {/* Button Exterior - Dólares */}
+                <a 
+                  href="https://patatas-store.impultienda.ar/checkout" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-1/2 px-6 py-4 bg-[#1B4D3E] hover:bg-[#143B30] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-[#D4AF37]"
+                >
+                  <div className="w-7 h-7 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow">
+                    <span className="text-white font-black text-xs">🌍</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[10px] uppercase opacity-90">🌍 Desde el Exterior</div>
+                    <div className="text-sm md:text-base font-black">Pagar en Dólares ($12.5 USD)</div>
+                  </div>
                 </a>
               </div>
               
-              <p className="text-[10px] opacity-90">🔒 Pago 100% seguro • Acceso inmediato</p>
+              {/* Trust & Reassurance Badges */}
+              <div className="pt-4 border-t border-white/30 flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-amber-100">
+                <span>🔒 Pago 100% Seguro</span>
+                <span>•</span>
+                <span>⚡ Acceso Inmediato y Vitalicio</span>
+                <span>•</span>
+                <span>🛡️ Garantía de Satisfacción</span>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-
-
-        {/* UPSELLS */}
-        <section className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-3xl p-8 md:p-10 shadow-sm space-y-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-2 max-w-xl">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">
-                🔥 Oferta Especial de Último Minuto
-              </span>
-              <h3 className="text-xl md:text-2xl font-extrabold text-[#1C1C1E]">
-                Agregá la Colección Extra "Navidad Minimalista & Elegante"
-              </h3>
-              <p className="text-sm text-[#6E6E73] leading-relaxed">
-                Llévate 10 diseños adicionales con estilo nórdico y minimalista por solo <strong className="text-[#1C1C1E]">$9 USD adicionales</strong> (Precio regular $30).
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center gap-3 shrink-0">
-              <button 
-                onClick={() => setUpsellSelected(!upsellSelected)}
-                className={`px-6 py-3 rounded-2xl text-xs font-bold transition-all shadow-sm flex items-center gap-2 ${
-                  upsellSelected 
-                    ? 'bg-emerald-600 text-white' 
-                    : 'bg-[#1C1C1E] text-white hover:bg-slate-800'
-                }`}
-              >
-                {upsellSelected ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                <span>{upsellSelected ? '¡Colección Extra Agregada!' : 'Agregar por +$9 USD'}</span>
-              </button>
-            </div>
-          </div>
-        </section>
+        {/* GIF ANIMADO ANTES DE ESCASEZ / URGENCIA */}
+        <div className="flex justify-center">
+          <img 
+            src="https://media.giphy.com/media/3ov9jLsBqPh6rjuHuM/giphy.gif" 
+            alt="GIF Animado" 
+            className="w-24 h-24 md:w-32 md:h-32 object-contain filter drop-shadow-lg"
+            referrerPolicy="no-referrer"
+          />
+        </div>
 
         {/* ESCASEZ / URGENCIA */}
         <section className="bg-red-50 border border-red-200 rounded-3xl p-8 text-center space-y-4">
@@ -444,18 +514,28 @@ export default function App() {
               Haz que esta Navidad sea inolvidable
             </h3>
             <p className="text-sm text-[#6E6E73] max-w-lg mx-auto">
-              Obtén el kit completo {upsellSelected ? '+ la colección extra minimalista' : ''} hoy mismo por solo <strong className="text-[#1C1C1E] text-base">${12 + (upsellSelected ? 9 : 0)} USD</strong>.
+              Obtén el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">$12.5 USD</strong>.
             </p>
+          </div>
+
+          {/* Giphy GIF before final checkout button */}
+          <div className="flex justify-center">
+            <img 
+              src="https://media.giphy.com/media/3ov9jLsBqPh6rjuHuM/giphy.gif" 
+              alt="GIF Animado Giphy" 
+              className="w-24 h-24 md:w-28 md:h-28 object-contain filter drop-shadow-md"
+              referrerPolicy="no-referrer"
+            />
           </div>
 
           <a 
             href="https://patatas-store.impultienda.ar/checkout"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 bg-[#D93829] border-2 border-[#D4AF37] text-white font-extrabold rounded-2xl hover:bg-[#C02F21] transition-colors shadow-lg shadow-red-600/25 text-base inline-flex items-center justify-center gap-3"
+            className="w-full sm:w-auto px-10 py-4 bg-[#1B4D3E] border-2 border-[#D4AF37] text-white font-extrabold rounded-2xl hover:bg-[#143B30] transition-colors shadow-xl shadow-emerald-900/30 text-base inline-flex items-center justify-center gap-3"
           >
             <ShoppingCart className="w-5 h-5 text-[#D4AF37]" />
-            <span>Quiero mi kit por solo $12 USD</span>
+            <span>Quiero mi kit por solo $12.5 USD</span>
           </a>
 
           <div className="pt-6 border-t border-[#E5E5EA] space-y-2 text-xs text-[#6E6E73]">
