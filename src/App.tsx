@@ -674,11 +674,21 @@ export default function App() {
             <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
           </div>
 
-          <div className="p-8 md:p-12 pt-12 pb-12 text-center max-w-2xl mx-auto space-y-4">
-            <h3 className="text-2xl md:text-3xl font-black text-[#1C1C1E]">Lo probé yo primero</h3>
-            <p className="text-sm md:text-base text-[#6E6E73] leading-relaxed">
-              El año pasado armé regalos para mis sobrinos en Navidad. Les hice stickers para sus termos y les encantaron. Ahí me di cuenta de que no hace falta gastar una fortuna para regalar algo único, hecho con tus propias manos. Este kit es todo lo que aprendí, para que vos también resuelvas tus regalos con poca plata.
-            </p>
+          <div className="p-6 md:p-10 pt-10 pb-10 flex flex-col md:flex-row items-center gap-6">
+            <div className="w-full md:w-1/3 shrink-0 flex flex-col items-center justify-center">
+              <img 
+                src="https://i.imgur.com/P6DCh4k.png" 
+                alt="Lo probé yo primero - Testimonio Real" 
+                className="w-full h-auto object-cover rounded-2xl shadow-md border-2 border-[#D4AF37]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="flex-1 space-y-3 text-center md:text-left">
+              <h3 className="text-2xl font-black text-[#1C1C1E]">Lo probé yo primero</h3>
+              <p className="text-sm text-[#6E6E73] leading-relaxed">
+                El año pasado armé regalos para mis sobrinos en Navidad. Les hice stickers para sus termos y les encantaron. Ahí me di cuenta de que no hace falta gastar una fortuna para regalar algo único, hecho con tus propias manos. Este kit es todo lo que aprendí, para que vos también resuelvas tus regalos con poca plata.
+              </p>
+            </div>
           </div>
 
           {/* Garland lights bottom bar */}
