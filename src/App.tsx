@@ -174,11 +174,11 @@ export default function App() {
               </a>
             </div>
 
-            <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 flex items-center justify-center order-1 lg:order-2">
+            <div className="w-72 h-72 sm:w-88 sm:h-88 md:w-[400px] md:h-[400px] flex items-center justify-center order-1 lg:order-2">
               <img 
                 src="https://i.imgur.com/TOdn8ow.png" 
                 alt="Papá Noel Zen" 
-                className="w-full h-full object-contain animate-zen filter drop-shadow-lg"
+                className="w-full h-full object-contain animate-zen filter drop-shadow-xl"
                 referrerPolicy="no-referrer"
               />
             </div>
