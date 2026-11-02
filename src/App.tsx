@@ -119,7 +119,7 @@ export default function App() {
                 className="w-full px-6 py-4 bg-[#009EE3] hover:bg-[#0082BD] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-white/80"
               >
                 <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
-                  <span className="text-[#009EE3] font-black text-xs">💙</span>
+                  <span className="text-[#009EE3] font-black text-xs">🇦🇷</span>
                 </div>
                 <div className="text-left">
                   <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
@@ -140,7 +140,8 @@ export default function App() {
                 </div>
                 <div className="text-left">
                   <div className="text-[10px] uppercase opacity-90">🌍 Desde el Exterior</div>
-                  <div className="text-sm md:text-base font-black">Pagar en Dólares ($12.5 USD)</div>
+                  <div className="text-xs md:text-sm font-bold">Pagar en Dólares</div>
+                  <div className="text-base md:text-lg font-black text-amber-200">USD $12.5</div>
                 </div>
               </a>
             </div>
@@ -169,7 +170,7 @@ export default function App() {
 
           <div style={{ position: 'relative', width: '100%', maxWidth: '400px', margin: '0 auto', paddingTop: '177.78%', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
             <iframe 
-              src="https://www.youtube.com/embed/P6OwFZZBaI4" 
+              src="https://www.youtube.com/embed/xsQWX1yWCEM" 
               title="Kit Digital Regalos Resueltos" 
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }} 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -433,7 +434,7 @@ export default function App() {
                   className="w-full sm:w-1/2 px-6 py-4 bg-[#009EE3] hover:bg-[#0082BD] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-white/60"
                 >
                   <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
-                    <span className="text-[#009EE3] font-black text-xs">💙</span>
+                    <span className="text-[#009EE3] font-black text-xs">🇦🇷</span>
                   </div>
                   <div className="text-left">
                     <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
@@ -454,7 +455,8 @@ export default function App() {
                   </div>
                   <div className="text-left">
                     <div className="text-[10px] uppercase opacity-90">🌍 Desde el Exterior</div>
-                    <div className="text-sm md:text-base font-black">Pagar en Dólares ($12.5 USD)</div>
+                    <div className="text-xs md:text-sm font-bold">Pagar en Dólares</div>
+                    <div className="text-base md:text-lg font-black text-amber-200">USD $12.5</div>
                   </div>
                 </a>
               </div>
