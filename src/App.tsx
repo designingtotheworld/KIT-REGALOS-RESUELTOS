@@ -519,6 +519,16 @@ export default function App() {
         </div>
       </section>
 
+        {/* NUEVA IMAGEN DE REGALOS AÑADIDA BAJO EL BLOQUE 6 */}
+        <div className="w-full overflow-hidden rounded-3xl shadow-2xl border-4 border-[#D4AF37] bg-white max-w-3xl mx-auto">
+          <img 
+            src="https://i.imgur.com/3HIR9Ji.jpeg" 
+            alt="Regalos Adicionales" 
+            className="w-full h-auto object-cover block m-0 p-0"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+
         {/* VIDEO MP4 EN LUGAR DE GIF ANTES DE ESCASEZ */}
         <div className="w-full overflow-hidden rounded-2xl shadow-2xl border-2 border-[#D4AF37]">
           <video 
@@ -582,8 +592,8 @@ export default function App() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#E05A47] px-3 py-1 bg-[#E05A47]/10 rounded-full">
               Acceso Inmediato
             </span>
-            <h3 className="text-3xl font-extrabold text-[#1C1C1E]">
-              Haz que esta Navidad sea inolvidable
+            <h3 className="text-2xl md:text-3xl font-extrabold text-[#1C1C1E] uppercase">
+              Sorprende con regalos originales hechos por vos misma y disfruta este año de ser la mejor mamá noel
             </h3>
             <p className="text-sm text-[#6E6E73] max-w-lg mx-auto">
               Obtén el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">$12.5 USD o ARS 19.125</strong>.
