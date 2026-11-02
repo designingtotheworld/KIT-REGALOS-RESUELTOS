@@ -109,21 +109,43 @@ export default function App() {
             10 ideas de regalos con sus kits imprimibles para armar más de 50 regalos únicos desde tu casa, aunque nunca lo hayas hecho antes.
           </p>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a 
-              href="https://patatas-store.impultienda.ar/checkout" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-5 bg-[#1B4D3E] text-white font-extrabold rounded-2xl hover:bg-[#143B30] transition-colors shadow-xl shadow-emerald-900/30 flex flex-col items-center justify-center text-center gap-1 order-2 sm:order-1 border-2 border-[#D4AF37]"
-            >
-              <div className="flex items-center gap-2">
-                <ShoppingCart className="w-5 h-5 text-[#D4AF37]" />
-                <span className="text-sm md:text-base uppercase tracking-wider font-extrabold">QUIERO MI KIT</span>
-              </div>
-              <span className="text-2xl md:text-3xl font-black text-[#FFF8DC] tracking-tight">POR $12.5 USD</span>
-            </a>
+          <div className="pt-4 flex flex-col lg:flex-row items-center justify-center gap-8">
+            <div className="flex flex-col gap-4 w-full max-w-md order-2 lg:order-1">
+              {/* Button Argentina - Mercado Pago */}
+              <a 
+                href="https://patatas-store.impultienda.ar/checkout" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full px-6 py-4 bg-[#009EE3] hover:bg-[#0082BD] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-white/80"
+              >
+                <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
+                  <span className="text-[#009EE3] font-black text-xs">💙</span>
+                </div>
+                <div className="text-left">
+                  <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
+                  <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
+                  <div className="text-[11px] font-bold text-amber-100">ARS 19.125 (aprox)</div>
+                </div>
+              </a>
 
-            <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 flex items-center justify-center order-1 sm:order-2">
+              {/* Button Exterior - Dólares */}
+              <a 
+                href="https://patatas-store.impultienda.ar/checkout" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full px-6 py-4 bg-[#1B4D3E] hover:bg-[#143B30] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-[#D4AF37]"
+              >
+                <div className="w-7 h-7 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow">
+                  <span className="text-white font-black text-xs">🌍</span>
+                </div>
+                <div className="text-left">
+                  <div className="text-[10px] uppercase opacity-90">🌍 Desde el Exterior</div>
+                  <div className="text-sm md:text-base font-black">Pagar en Dólares ($12.5 USD)</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 flex items-center justify-center order-1 lg:order-2">
               <img 
                 src="https://i.imgur.com/TOdn8ow.png" 
                 alt="Papá Noel Zen" 
@@ -145,12 +167,12 @@ export default function App() {
             </p>
           </div>
 
-          <div className="w-full aspect-[9/16] bg-black rounded-3xl shadow-2xl overflow-hidden border border-[#E5E5EA] relative">
+          <div style={{ position: 'relative', width: '100%', maxWidth: '400px', margin: '0 auto', paddingTop: '177.78%', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
             <iframe 
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/MTc-B42KoB0" 
-              title="Video Demostrativo Regalos Resueltos" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              src="https://www.youtube.com/embed/P6OwFZZBaI4" 
+              title="Kit Digital Regalos Resueltos" 
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }} 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
           </div>
@@ -392,13 +414,13 @@ export default function App() {
                 <span className="text-xs md:text-sm font-black uppercase tracking-widest bg-white/25 px-5 py-2 rounded-full inline-block shadow-sm">
                   🔥 OFERTA DE LANZAMIENTO IRRESISTIBLE
                 </span>
-                <p className="text-sm font-medium opacity-90 pt-1">Valor regular anterior: <span className="line-through font-black text-base text-white decoration-white">$25 USD</span></p>
+                <p className="text-sm font-medium opacity-95 pt-1">Valor Total Real del Paquete: <span className="line-through font-black text-lg text-white decoration-white">$40 USD</span> <span className="text-xs text-amber-100">(25 + 10 + 5)</span></p>
               </div>
 
               {/* Price displayed very big, clear and easy to read */}
               <div className="bg-white/15 backdrop-blur-md rounded-3xl p-6 border-2 border-white/40 inline-block px-10 py-5 shadow-inner">
                 <p className="text-xs md:text-sm uppercase tracking-widest font-black opacity-95 text-amber-100">SOLO HOY PAGÁS</p>
-                <p className="text-6xl md:text-7xl font-black tracking-tight text-white drop-shadow-lg">$12.5 <span className="text-2xl md:text-3xl font-extrabold text-[#FFF8DC]">USD</span></p>
+                <p className="text-6xl md:text-7xl font-black tracking-tight text-white drop-shadow-lg">USD$12,5</p>
               </div>
 
               {/* Two Separate Checkout Buttons: Argentina (Mercado Pago) & Exterior (Dólares) */}
@@ -416,6 +438,7 @@ export default function App() {
                   <div className="text-left">
                     <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
                     <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
+                    <div className="text-[11px] font-bold text-amber-100">ARS 19.125 (aprox)</div>
                   </div>
                 </a>
 
@@ -449,14 +472,16 @@ export default function App() {
         </div>
       </section>
 
-        {/* GIF ANIMADO ANTES DE ESCASEZ / URGENCIA */}
-        <div className="flex justify-center">
-          <img 
-            src="https://media.giphy.com/media/3ov9jLsBqPh6rjuHuM/giphy.gif" 
-            alt="GIF Animado" 
-            className="w-24 h-24 md:w-32 md:h-32 object-contain filter drop-shadow-lg"
-            referrerPolicy="no-referrer"
-          />
+        {/* VIDEO MP4 EN LUGAR DE GIF ANTES DE ESCASEZ */}
+        <div className="w-full overflow-hidden rounded-2xl shadow-2xl border-2 border-[#D4AF37]">
+          <video 
+            src="https://i.imgur.com/mScaTdr.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-auto object-cover block m-0 p-0"
+          ></video>
         </div>
 
         {/* ESCASEZ / URGENCIA */}
@@ -466,7 +491,7 @@ export default function App() {
             <span>¡Atención: Tiempo Límite!</span>
           </div>
           <h3 className="text-xl md:text-2xl font-bold text-[#1C1C1E]">
-            Asegura tus impresiones antes de que las imprentas cierren por vacaciones
+            NO LO DEJES PARA LO ULTIMO. DESCARGA EL KIT AHORA, Y MANDALO A LA IMPRENTA PARA ARMAR CON TIEMPO Y TRANQUILA TUS REGALOS
           </h3>
           <p className="text-sm text-[#6E6E73] max-w-xl mx-auto">
             Diciembre se acerca rápido y los talleres gráficos colapsan. Descarga hoy tus archivos y adelanta tus regalos con total tranquilidad.
@@ -518,15 +543,7 @@ export default function App() {
             </p>
           </div>
 
-          {/* Giphy GIF before final checkout button */}
-          <div className="flex justify-center">
-            <img 
-              src="https://media.giphy.com/media/3ov9jLsBqPh6rjuHuM/giphy.gif" 
-              alt="GIF Animado Giphy" 
-              className="w-24 h-24 md:w-28 md:h-28 object-contain filter drop-shadow-md"
-              referrerPolicy="no-referrer"
-            />
-          </div>
+
 
           <a 
             href="https://patatas-store.impultienda.ar/checkout"
@@ -538,12 +555,6 @@ export default function App() {
             <span>Quiero mi kit por solo $12.5 USD</span>
           </a>
 
-          <div className="pt-6 border-t border-[#E5E5EA] space-y-2 text-xs text-[#6E6E73]">
-            <p className="font-semibold text-[#1C1C1E]">✨ Cierre Emocional</p>
-            <p className="max-w-md mx-auto italic">
-              "El mejor regalo no es el más caro, sino el que demuestra que alguien se tomó el tiempo de pensar en vos. Regalos Resueltos hace que ese momento mágico sea fácil y accesible."
-            </p>
-          </div>
         </section>
 
       </main>
