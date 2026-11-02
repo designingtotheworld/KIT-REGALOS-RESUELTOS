@@ -152,7 +152,7 @@ export default function App() {
                 <div className="text-left">
                   <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
                   <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                  <div className="text-[11px] font-bold text-amber-100">ARS 19.125 (aprox)</div>
+                  <div className="text-[11px] font-bold text-amber-100">ARS 19.125</div>
                 </div>
               </a>
 
@@ -354,7 +354,7 @@ export default function App() {
                     Archivos PNG 300 DPI listos para mandar a imprimir y armar <strong className="text-[#1C1C1E]">más de 50 regalos únicos</strong>.
                   </p>
                   <div className="pt-1 font-black text-sm">
-                    <span className="line-through text-red-600 font-extrabold mr-2">$25 USD</span>
+                    <span className="line-through text-red-600 font-extrabold mr-2">$15 USD</span>
                   </div>
                 </div>
               </div>
@@ -370,7 +370,7 @@ export default function App() {
                     Como te mostramos en videos simples y cortos, el proceso de cómo estampar tus objetos con la plancha que tenés en casa y cómo aplicar el DTF UV en tus objetos rígidos.
                   </p>
                   <div className="pt-1 flex items-center gap-3 font-black text-sm">
-                    <span className="line-through text-red-600 font-extrabold">$10 USD</span>
+                    <span className="line-through text-red-600 font-extrabold">$7 USD</span>
                     <span className="bg-[#1B4D3E] text-white text-xs font-black px-3 py-1 rounded-full shadow-sm">GRATIS CON TU KIT</span>
                   </div>
                 </div>
@@ -387,7 +387,7 @@ export default function App() {
                     Diseños de etiquetas y tags navideños a juego para una presentación impecable.
                   </p>
                   <div className="pt-1 flex items-center gap-3 font-black text-sm">
-                    <span className="line-through text-red-600 font-extrabold">US$5</span>
+                    <span className="line-through text-red-600 font-extrabold">$3 USD</span>
                     <span className="bg-[#1B4D3E] text-white text-xs font-black px-3 py-1 rounded-full shadow-sm">GRATIS CON TU KIT</span>
                   </div>
                 </div>
@@ -460,7 +460,7 @@ export default function App() {
                 <span className="text-xs md:text-sm font-black uppercase tracking-widest bg-white/25 px-5 py-2 rounded-full inline-block shadow-sm">
                   🔥 OFERTA DE LANZAMIENTO IRRESISTIBLE
                 </span>
-                <p className="text-sm font-medium opacity-95 pt-1">Valor Total Real del Paquete: <span className="line-through font-black text-lg text-white decoration-white">$40 USD</span> <span className="text-xs text-amber-100">(25 + 10 + 5)</span></p>
+                <p className="text-sm font-medium opacity-95 pt-1">Valor Total Real del Paquete: <span className="line-through font-black text-lg text-white decoration-white">$25 USD</span> <span className="text-xs text-amber-100">(15 + 7 + 3)</span></p>
               </div>
 
               {/* Price displayed very big, clear and easy to read */}
@@ -484,7 +484,7 @@ export default function App() {
                   <div className="text-left">
                     <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
                     <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                    <div className="text-[11px] font-bold text-amber-100">ARS 19.125 (aprox)</div>
+                    <div className="text-[11px] font-bold text-amber-100">ARS 19.125</div>
                   </div>
                 </a>
 
@@ -548,11 +548,17 @@ export default function App() {
             <span>¡Atención: Tiempo Límite!</span>
           </div>
           <h3 className="text-xl md:text-2xl font-bold text-[#1C1C1E]">
-            NO LO DEJES PARA LO ULTIMO. DESCARGA EL KIT AHORA, Y MANDALO A LA IMPRENTA PARA ARMAR CON TIEMPO Y TRANQUILA TUS REGALOS
+            Llegá a tiempo: descargá hoy y armá tus regalos de Navidad.
           </h3>
           <p className="text-sm text-[#6E6E73] max-w-xl mx-auto">
-            Diciembre se acerca rápido y los talleres gráficos colapsan. Descarga hoy tus archivos y adelanta tus regalos con total tranquilidad.
+            Diciembre se acerca rápido y los talleres gráficos colapsan. Descargá hoy tus archivos y adelantá tus regalos con total tranquilidad.
           </p>
+        </section>
+
+        {/* SECCIÓN FERIANTE */}
+        <section className="bg-gradient-to-r from-[#1B4D3E] to-[#143B30] text-white rounded-3xl p-8 shadow-xl max-w-3xl mx-auto text-center space-y-3 border-2 border-[#D4AF37]">
+          <h3 className="text-2xl font-black text-[#D4AF37]">¿Sos feriante?</h3>
+          <p className="text-sm text-white/90">Armá regalos personalizados para vender en tu puesto y aprovechá la temporada de Navidad.</p>
         </section>
 
         {/* OBJECIONES / FAQ */}
@@ -562,7 +568,7 @@ export default function App() {
               Preguntas Frecuentes
             </h3>
             <p className="text-sm text-[#6E6E73]">
-              Todo lo que necesitas saber antes de empezar.
+              Todo lo que necesitás saber antes de empezar.
             </p>
           </div>
 
@@ -593,11 +599,17 @@ export default function App() {
               Acceso Inmediato
             </span>
             <h3 className="text-2xl md:text-3xl font-extrabold text-[#1C1C1E] uppercase">
-              Sorprende con regalos originales hechos por vos misma y disfruta este año de ser la mejor mamá noel
+              Sorprendé con regalos originales hechos por vos misma y disfrutá este año de ser la mejor mamá noel
             </h3>
             <p className="text-sm text-[#6E6E73] max-w-lg mx-auto">
-              Obtén el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">$12.5 USD o ARS 19.125</strong>.
+              Obtené el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">USD $12.5 o ARS 19.125</strong>.
             </p>
+          </div>
+
+          {/* Requerimiento 5: Arriba del botón de compra final agregá: título "No dejes los regalos para el final", texto "Llegá con tiempo, sorprendé a todos y descargá hoy tus archivos antes de que las imprentas se llenen." */}
+          <div className="bg-[#FAF9F5] border-2 border-[#D4AF37]/50 rounded-2xl p-6 shadow-inner space-y-2 text-center">
+            <h4 className="text-xl font-black text-[#1C1C1E]">No dejes los regalos para el final</h4>
+            <p className="text-sm text-[#6E6E73]">Llegá con tiempo, sorprendé a todos y descargá hoy tus archivos antes de que las imprentas se llenen.</p>
           </div>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -614,7 +626,7 @@ export default function App() {
               <div className="text-left">
                 <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
                 <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                <div className="text-[11px] font-bold text-amber-100">ARS 19.125 (aprox)</div>
+                <div className="text-[11px] font-bold text-amber-100">ARS 19.125</div>
               </div>
             </a>
 
@@ -636,6 +648,32 @@ export default function App() {
             </a>
           </div>
 
+          {/* Garantía de satisfacción */}
+          <div className="pt-6 border-t border-[#E5E5EA] text-center space-y-1.5">
+            <h4 className="font-extrabold text-sm text-[#1C1C1E]">Garantía de satisfacción</h4>
+            <p className="text-xs text-[#6E6E73] max-w-md mx-auto leading-relaxed">
+              Si tu archivo no se abre o llega dañado, te lo reenviamos o te devolvemos tu dinero. Escribinos dentro de los 7 días de tu compra.
+            </p>
+          </div>
+
+        </section>
+
+        {/* LO PROBÉ YO PRIMERO */}
+        <section className="bg-white border-2 border-[#D4AF37] rounded-3xl p-6 md:p-8 shadow-xl max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-6">
+          <div className="w-full md:w-1/3 shrink-0">
+            <img 
+              src="/assets/aistudio/image_5ffa12aa.png" 
+              alt="Lo probé yo primero" 
+              className="w-full h-auto object-cover rounded-2xl shadow-md border-2 border-[#D4AF37]"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="flex-1 space-y-3 text-center md:text-left">
+            <h3 className="text-2xl font-black text-[#1C1C1E]">Lo probé yo primero</h3>
+            <p className="text-sm text-[#6E6E73] leading-relaxed">
+              El año pasado armé regalos para mis sobrinos en Navidad. Les hice stickers para sus termos y les encantaron. Ahí me di cuenta de que no hace falta gastar una fortuna para regalar algo único, hecho con tus propias manos. Este kit es todo lo que aprendí, para que vos también resuelvas tus regalos con poca plata.
+            </p>
+          </div>
         </section>
 
       </main>
