@@ -12,7 +12,7 @@ import {
 export default function App() {
   const [imageError, setImageError] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [bonusImgUrl, setBonusImgUrl] = useState('');
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
 
   // Dynamic today's date in Spanish for urgency banner
   const todayFormatted = new Date().toLocaleDateString('es-ES', { 
@@ -196,14 +196,31 @@ export default function App() {
             </p>
           </div>
 
-          <div style={{ position: 'relative', width: '100%', maxWidth: '400px', margin: '0 auto', paddingTop: '177.78%', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
-            <iframe 
-              src="https://www.youtube.com/embed/xsQWX1yWCEM" 
-              title="Kit Digital Regalos Resueltos" 
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }} 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+          <div style={{ position: 'relative', width: '100%', maxWidth: '320px', margin: '0 auto', aspectRatio: '9/16', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', background: '#000' }}>
+            {!isPlayingVideo ? (
+              <div 
+                onClick={() => setIsPlayingVideo(true)}
+                className="absolute inset-0 cursor-pointer group flex items-center justify-center bg-black"
+              >
+                <img 
+                  src="https://img.youtube.com/vi/xsQWX1yWCEM/hqdefault.jpg" 
+                  alt="Portada del Video" 
+                  className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
+                <div className="relative z-10 w-16 h-16 rounded-full bg-[#D93829] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 fill-current translate-x-0.5 text-white" />
+                </div>
+              </div>
+            ) : (
+              <iframe 
+                src="https://www.youtube.com/embed/xsQWX1yWCEM?autoplay=1" 
+                title="Kit Digital Regalos Resueltos" 
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }} 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            )}
           </div>
         </section>
 
@@ -569,21 +586,45 @@ export default function App() {
               Haz que esta Navidad sea inolvidable
             </h3>
             <p className="text-sm text-[#6E6E73] max-w-lg mx-auto">
-              Obtén el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">$12.5 USD</strong>.
+              Obtén el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">$12.5 USD o ARS 19.125</strong>.
             </p>
           </div>
 
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* Button Argentina - Mercado Pago */}
+            <a 
+              href="https://patatas-store.impultienda.ar/checkout" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-1/2 px-6 py-4 bg-[#009EE3] hover:bg-[#0082BD] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-white/60"
+            >
+              <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
+                <span className="text-[#009EE3] font-black text-xs">🇦🇷</span>
+              </div>
+              <div className="text-left">
+                <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
+                <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
+                <div className="text-[11px] font-bold text-amber-100">ARS 19.125 (aprox)</div>
+              </div>
+            </a>
 
-
-          <a 
-            href="https://patatas-store.impultienda.ar/checkout"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 bg-[#1B4D3E] border-2 border-[#D4AF37] text-white font-extrabold rounded-2xl hover:bg-[#143B30] transition-colors shadow-xl shadow-emerald-900/30 text-base inline-flex items-center justify-center gap-3"
-          >
-            <ShoppingCart className="w-5 h-5 text-[#D4AF37]" />
-            <span>Quiero mi kit por solo $12.5 USD</span>
-          </a>
+            {/* Button Exterior - Dólares */}
+            <a 
+              href="https://patatas-store.impultienda.ar/checkout" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-1/2 px-6 py-4 bg-[#1B4D3E] hover:bg-[#143B30] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-[#D4AF37]"
+            >
+              <div className="w-7 h-7 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow">
+                <span className="text-white font-black text-xs">🌍</span>
+              </div>
+              <div className="text-left">
+                <div className="text-[10px] uppercase opacity-90">🌍 Desde el Exterior</div>
+                <div className="text-xs md:text-sm font-bold">Pagar en Dólares</div>
+                <div className="text-base md:text-lg font-black text-amber-200">USD $12.5</div>
+              </div>
+            </a>
+          </div>
 
         </section>
 
