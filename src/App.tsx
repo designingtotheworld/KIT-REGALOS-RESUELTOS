@@ -84,13 +84,27 @@ export default function App() {
       {/* WHITE AIR GAP BETWEEN URGENCY BANNER AND GRAPHIC */}
       <div className="h-6 w-full bg-[#FAF9F5]"></div>
 
-      {/* TOP BRAND BANNER */}
-      <header className="w-full bg-white border-b border-[#E5E5EA]">
+      {/* TOP BRAND BANNER WITH GARLAND LIGHTS */}
+      <header className="w-full bg-white border-y-4 border-[#D4AF37] relative overflow-hidden shadow-2xl">
+        {/* Garland lights top bar */}
+        <div className="absolute top-0 inset-x-0 h-5 bg-[#1B4D3E] flex items-center justify-around px-4 z-10 border-b border-[#D4AF37]">
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-3 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+        </div>
+
         {!imageError ? (
           <img 
             src="https://i.imgur.com/dmuw46z.jpeg" 
             alt="Regalos Resueltos - Promesa Principal" 
-            className="w-full h-auto object-cover shadow-sm"
+            className="w-full h-auto object-cover pt-5 pb-5 block"
             referrerPolicy="no-referrer"
             onError={() => setImageError(true)}
           />
@@ -99,6 +113,20 @@ export default function App() {
             Regalos Resueltos
           </div>
         )}
+
+        {/* Garland lights bottom bar */}
+        <div className="absolute bottom-0 inset-x-0 h-5 bg-[#1B4D3E] flex items-center justify-around px-4 z-10 border-t border-[#D4AF37]">
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-3 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
+        </div>
       </header>
 
       <main className="max-w-5xl mx-auto px-6 py-12 space-y-24">
