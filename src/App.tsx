@@ -144,15 +144,19 @@ export default function App() {
                 href="https://patatas-store.impultienda.ar/checkout" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full px-6 py-4 bg-[#009EE3] hover:bg-[#0082BD] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-white/80"
+                className="w-full px-6 py-5 bg-[#009EE3] hover:bg-[#0082BD] text-white rounded-2xl shadow-2xl transition-all flex items-center justify-between gap-3 border-2 border-white/80"
               >
-                <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
-                  <span className="text-[#009EE3] font-black text-xs">🇦🇷</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
+                    <span className="text-[#009EE3] font-black text-sm">🇦🇷</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[10px] uppercase opacity-90 font-bold">Si estás en Argentina</div>
+                    <div className="text-xs md:text-sm font-extrabold uppercase">Mercado Pago</div>
+                  </div>
                 </div>
-                <div className="text-left">
-                  <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
-                  <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                  <div className="text-base md:text-lg font-black text-[#FFE500]">ARS 19.125</div>
+                <div className="text-right">
+                  <div className="text-2xl md:text-3xl font-black text-[#FFE500] drop-shadow">ARS 19.125</div>
                 </div>
               </a>
 
@@ -161,15 +165,19 @@ export default function App() {
                 href="https://patatas-store.impultienda.ar/checkout" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full px-6 py-4 bg-[#1B4D3E] hover:bg-[#143B30] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-[#D4AF37]"
+                className="w-full px-6 py-5 bg-[#1B4D3E] hover:bg-[#143B30] text-white rounded-2xl shadow-2xl transition-all flex items-center justify-between gap-3 border-2 border-[#D4AF37]"
               >
-                <div className="w-7 h-7 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow">
-                  <span className="text-white font-black text-xs">🌍</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow">
+                    <span className="text-white font-black text-sm">🌍</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[10px] uppercase opacity-90 font-bold">Desde el Exterior</div>
+                    <div className="text-xs md:text-sm font-extrabold uppercase">PayPal / Tarjeta</div>
+                  </div>
                 </div>
-                <div className="text-left">
-                  <div className="text-[10px] uppercase opacity-90">🌍 Desde el Exterior</div>
-                  <div className="text-xs md:text-sm font-bold">Pagar en Dólares</div>
-                  <div className="text-base md:text-lg font-black text-amber-200">USD $12.5</div>
+                <div className="text-right">
+                  <div className="text-2xl md:text-3xl font-black text-amber-200 drop-shadow">USD $12.5</div>
                 </div>
               </a>
             </div>
@@ -476,16 +484,13 @@ export default function App() {
                   href="https://patatas-store.impultienda.ar/checkout" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-1/2 px-6 py-4 bg-[#009EE3] hover:bg-[#0082BD] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-white/60"
+                  className="w-full sm:w-1/2 px-5 py-5 bg-[#009EE3] hover:bg-[#0082BD] text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-white/80 text-center"
                 >
-                  <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
-                    <span className="text-[#009EE3] font-black text-xs">🇦🇷</span>
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center shrink-0 shadow text-[#009EE3] font-black text-xs">🇦🇷</span>
+                    <span className="text-[11px] uppercase tracking-wider font-bold">Mercado Pago (ARS)</span>
                   </div>
-                  <div className="text-left">
-                    <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
-                    <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                    <div className="text-base md:text-lg font-black text-[#FFE500]">ARS 19.125</div>
-                  </div>
+                  <div className="text-2xl md:text-3xl font-black text-[#FFE500] drop-shadow">ARS 19.125</div>
                 </a>
 
                 {/* Button Exterior - Dólares */}
@@ -493,16 +498,13 @@ export default function App() {
                   href="https://patatas-store.impultienda.ar/checkout" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-1/2 px-6 py-4 bg-[#1B4D3E] hover:bg-[#143B30] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-[#D4AF37]"
+                  className="w-full sm:w-1/2 px-5 py-5 bg-[#1B4D3E] hover:bg-[#143B30] text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-[#D4AF37] text-center"
                 >
-                  <div className="w-7 h-7 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow">
-                    <span className="text-white font-black text-xs">🌍</span>
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow text-white font-black text-xs">🌍</span>
+                    <span className="text-[11px] uppercase tracking-wider font-bold">Exterior (USD)</span>
                   </div>
-                  <div className="text-left">
-                    <div className="text-[10px] uppercase opacity-90">🌍 Desde el Exterior</div>
-                    <div className="text-xs md:text-sm font-bold">Pagar en Dólares</div>
-                    <div className="text-base md:text-lg font-black text-amber-200">USD $12.5</div>
-                  </div>
+                  <div className="text-2xl md:text-3xl font-black text-amber-200 drop-shadow">USD $12.5</div>
                 </a>
               </div>
               
@@ -646,16 +648,13 @@ export default function App() {
               href="https://patatas-store.impultienda.ar/checkout" 
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-1/2 px-6 py-4 bg-[#009EE3] hover:bg-[#0082BD] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-white/60"
+              className="w-full sm:w-1/2 px-5 py-5 bg-[#009EE3] hover:bg-[#0082BD] text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-white/80 text-center"
             >
-              <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
-                <span className="text-[#009EE3] font-black text-xs">🇦🇷</span>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center shrink-0 shadow text-[#009EE3] font-black text-xs">🇦🇷</span>
+                <span className="text-[11px] uppercase tracking-wider font-bold">Mercado Pago (ARS)</span>
               </div>
-              <div className="text-left">
-                <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
-                <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                <div className="text-base md:text-lg font-black text-[#FFE500]">ARS 19.125</div>
-              </div>
+              <div className="text-2xl md:text-3xl font-black text-[#FFE500] drop-shadow">ARS 19.125</div>
             </a>
 
             {/* Button Exterior - Dólares */}
@@ -663,16 +662,13 @@ export default function App() {
               href="https://patatas-store.impultienda.ar/checkout" 
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-1/2 px-6 py-4 bg-[#1B4D3E] hover:bg-[#143B30] text-white font-black text-xs md:text-sm uppercase tracking-wider rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-3 border-2 border-[#D4AF37]"
+              className="w-full sm:w-1/2 px-5 py-5 bg-[#1B4D3E] hover:bg-[#143B30] text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-[#D4AF37] text-center"
             >
-              <div className="w-7 h-7 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow">
-                <span className="text-white font-black text-xs">🌍</span>
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow text-white font-black text-xs">🌍</span>
+                <span className="text-[11px] uppercase tracking-wider font-bold">Exterior (USD)</span>
               </div>
-              <div className="text-left">
-                <div className="text-[10px] uppercase opacity-90">🌍 Desde el Exterior</div>
-                <div className="text-xs md:text-sm font-bold">Pagar en Dólares</div>
-                <div className="text-base md:text-lg font-black text-amber-200">USD $12.5</div>
-              </div>
+              <div className="text-2xl md:text-3xl font-black text-amber-200 drop-shadow">USD $12.5</div>
             </a>
           </div>
 
