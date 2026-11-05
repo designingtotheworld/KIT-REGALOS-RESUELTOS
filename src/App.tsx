@@ -77,7 +77,7 @@ export default function App() {
       {/* TOP URGENCY BANNER WITH SWINGING BELLS & WHITE GAP */}
       <div className="bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] text-white py-3.5 px-4 text-center text-xs md:text-sm font-black tracking-wider uppercase flex items-center justify-center gap-3 shadow-lg sticky top-0 z-50">
         <span className="bell-ring text-lg">🔔</span>
-        <span>⚡ OFERTA DE LANZAMIENTO HASTA HOY, {todayFormatted.toUpperCase()} • 50% OFF ⚡</span>
+        <span>⚡ OFERTA DE LANZAMIENTO HASTA HOY, {todayFormatted.toUpperCase()} • 65% OFF ⚡</span>
         <span className="bell-ring text-lg">🔔</span>
       </div>
 
@@ -148,7 +148,7 @@ export default function App() {
               >
                 <div className="text-sm md:text-base font-black text-white uppercase tracking-wider drop-shadow">¡QUIERO MI KIT!</div>
                 <div className="text-[11px] font-bold text-amber-100 uppercase tracking-widest">🇦🇷 Pagar con Mercado Pago</div>
-                <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 15.331</div>
+                <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 14.990</div>
               </a>
             </div>
 
@@ -458,7 +458,7 @@ export default function App() {
               {/* Price displayed very big, clear and easy to read */}
               <div className="bg-white/15 backdrop-blur-md rounded-3xl p-6 border-2 border-white/40 inline-block px-10 py-5 shadow-inner">
                 <p className="text-xs md:text-sm uppercase tracking-widest font-black opacity-95 text-amber-100">SOLO HOY PAGÁS</p>
-                <p className="text-5xl md:text-6xl font-black tracking-tight text-white drop-shadow-lg">ARS 15.331</p>
+                <p className="text-5xl md:text-6xl font-black tracking-tight text-white drop-shadow-lg">ARS 14.990</p>
               </div>
 
               {/* Single Large Golden Checkout Button: Argentina (Mercado Pago) */}
@@ -471,7 +471,7 @@ export default function App() {
                 >
                   <div className="text-sm md:text-base font-black text-white uppercase tracking-wider drop-shadow">¡QUIERO MI KIT!</div>
                   <div className="text-[11px] font-bold text-amber-100 uppercase tracking-widest">🇦🇷 Pagar con Mercado Pago</div>
-                  <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 15.331</div>
+                  <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 14.990</div>
                 </a>
               </div>
               
@@ -613,7 +613,7 @@ export default function App() {
               Sorprendé con regalos originales hechos por vos misma y disfrutá este año de ser la mejor mamá noel
             </h3>
             <p className="text-sm text-[#6E6E73] max-w-lg mx-auto">
-              Obtené el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">ARS 15.331</strong>.
+              Obtené el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">ARS 14.990</strong>.
             </p>
           </div>
 
@@ -633,7 +633,7 @@ export default function App() {
             >
               <div className="text-sm md:text-base font-black text-white uppercase tracking-wider drop-shadow">¡QUIERO MI KIT!</div>
               <div className="text-[11px] font-bold text-amber-100 uppercase tracking-widest">🇦🇷 Pagar con Mercado Pago</div>
-              <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 15.331</div>
+              <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 14.990</div>
             </a>
           </div>
 
