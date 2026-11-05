@@ -152,7 +152,7 @@ export default function App() {
                 <div className="text-left">
                   <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
                   <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                  <div className="text-[11px] font-bold text-amber-100">ARS 19.125</div>
+                  <div className="text-base md:text-lg font-black text-amber-100">ARS 19.125</div>
                 </div>
               </a>
 
@@ -484,7 +484,7 @@ export default function App() {
                   <div className="text-left">
                     <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
                     <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                    <div className="text-[11px] font-bold text-amber-100">ARS 19.125</div>
+                    <div className="text-base md:text-lg font-black text-amber-100">ARS 19.125</div>
                   </div>
                 </a>
 
@@ -654,7 +654,7 @@ export default function App() {
               <div className="text-left">
                 <div className="text-[10px] uppercase opacity-90">🇦🇷 Si estás en Argentina</div>
                 <div className="text-sm md:text-base font-black">Pagar en Pesos (Mercado Pago)</div>
-                <div className="text-[11px] font-bold text-amber-100">ARS 19.125</div>
+                <div className="text-base md:text-lg font-black text-amber-100">ARS 19.125</div>
               </div>
             </a>
 
