@@ -139,46 +139,16 @@ export default function App() {
 
           <div className="pt-4 flex flex-col lg:flex-row items-center justify-center gap-8">
             <div className="flex flex-col gap-4 w-full max-w-md order-2 lg:order-1">
-              {/* Button Argentina - Mercado Pago */}
+              {/* Single Large Golden Button Argentina - Mercado Pago */}
               <a 
                 href="https://patatas-store.impultienda.ar/checkout" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full px-6 py-5 bg-[#009EE3] hover:bg-[#0082BD] text-white rounded-2xl shadow-2xl transition-all flex items-center justify-between gap-3 border-2 border-white/80"
+                className="w-full max-w-md mx-auto px-6 py-5 bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] hover:opacity-95 text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-white/90 text-center"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center shrink-0 shadow">
-                    <span className="text-[#009EE3] font-black text-sm">🇦🇷</span>
-                  </div>
-                  <div className="text-left">
-                    <div className="text-[10px] uppercase opacity-90 font-bold">Si estás en Argentina</div>
-                    <div className="text-xs md:text-sm font-extrabold uppercase">Mercado Pago</div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-2xl md:text-3xl font-black text-[#FFE500] drop-shadow">ARS 19.125</div>
-                </div>
-              </a>
-
-              {/* Button Exterior - Dólares */}
-              <a 
-                href="https://patatas-store.impultienda.ar/checkout" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full px-6 py-5 bg-[#1B4D3E] hover:bg-[#143B30] text-white rounded-2xl shadow-2xl transition-all flex items-center justify-between gap-3 border-2 border-[#D4AF37]"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow">
-                    <span className="text-white font-black text-sm">🌍</span>
-                  </div>
-                  <div className="text-left">
-                    <div className="text-[10px] uppercase opacity-90 font-bold">Desde el Exterior</div>
-                    <div className="text-xs md:text-sm font-extrabold uppercase">PayPal / Tarjeta</div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-2xl md:text-3xl font-black text-amber-200 drop-shadow">USD $12.5</div>
-                </div>
+                <div className="text-sm md:text-base font-black text-white uppercase tracking-wider drop-shadow">¡QUIERO MI KIT!</div>
+                <div className="text-[11px] font-bold text-amber-100 uppercase tracking-widest">🇦🇷 Pagar con Mercado Pago</div>
+                <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 15.331</div>
               </a>
             </div>
 
@@ -403,15 +373,15 @@ export default function App() {
 
               {/* Bonus Exclusive Header inside checklist */}
               <div className="pt-2 space-y-4">
-                <div className="bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] rounded-2xl p-4 text-white shadow-xl flex items-center justify-between border-2 border-white/40">
+                <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-3xl animate-bounce">🎁</span>
                     <div>
-                      <p className="text-[10px] uppercase tracking-widest font-bold opacity-90 text-amber-100">Regalo Especial</p>
-                      <h4 className="text-lg md:text-xl font-black tracking-tight text-white drop-shadow-sm">BONO EXCLUSIVO</h4>
+                      <p className="text-[10px] uppercase tracking-widest font-bold text-[#996515]">Regalo Especial</p>
+                      <h4 className="text-lg md:text-xl font-black tracking-tight text-[#1C1C1E]">BONO EXCLUSIVO</h4>
                     </div>
                   </div>
-                  <span className="text-xs font-black bg-[#1B4D3E] text-white px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/30 shadow-md">
+                  <span className="text-xs font-black bg-[#1B4D3E] text-white px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">
                     100% GRATIS HOY
                   </span>
                 </div>
@@ -463,7 +433,21 @@ export default function App() {
             </div>
 
             {/* Price Box inside the Single Card */}
-            <div className="bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] rounded-3xl p-6 md:p-10 text-white shadow-2xl text-center space-y-6 border-2 border-white/60">
+            <div className="bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] rounded-3xl p-6 md:p-10 pt-12 pb-12 text-white shadow-2xl text-center space-y-6 border-2 border-white/60 relative overflow-hidden">
+              {/* Garland lights top bar */}
+              <div className="absolute top-0 inset-x-0 h-5 bg-[#1B4D3E] flex items-center justify-around px-4 z-10 border-b border-[#D4AF37]">
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+              </div>
+
               <div className="space-y-2">
                 <span className="text-xs md:text-sm font-black uppercase tracking-widest bg-white/25 px-5 py-2 rounded-full inline-block shadow-sm">
                   🔥 OFERTA DE LANZAMIENTO IRRESISTIBLE
@@ -474,37 +458,20 @@ export default function App() {
               {/* Price displayed very big, clear and easy to read */}
               <div className="bg-white/15 backdrop-blur-md rounded-3xl p-6 border-2 border-white/40 inline-block px-10 py-5 shadow-inner">
                 <p className="text-xs md:text-sm uppercase tracking-widest font-black opacity-95 text-amber-100">SOLO HOY PAGÁS</p>
-                <p className="text-6xl md:text-7xl font-black tracking-tight text-white drop-shadow-lg">USD$12,5</p>
+                <p className="text-5xl md:text-6xl font-black tracking-tight text-white drop-shadow-lg">ARS 15.331</p>
               </div>
 
-              {/* Two Separate Checkout Buttons: Argentina (Mercado Pago) & Exterior (Dólares) */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-                {/* Button Argentina - Mercado Pago */}
+              {/* Single Large Golden Checkout Button: Argentina (Mercado Pago) */}
+              <div className="pt-2 flex justify-center">
                 <a 
                   href="https://patatas-store.impultienda.ar/checkout" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-1/2 px-5 py-5 bg-[#009EE3] hover:bg-[#0082BD] text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-white/80 text-center"
+                  className="w-full max-w-md px-6 py-5 bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] hover:opacity-95 text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-white/90 text-center"
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center shrink-0 shadow text-[#009EE3] font-black text-xs">🇦🇷</span>
-                    <span className="text-[11px] uppercase tracking-wider font-bold">Mercado Pago (ARS)</span>
-                  </div>
-                  <div className="text-2xl md:text-3xl font-black text-[#FFE500] drop-shadow">ARS 19.125</div>
-                </a>
-
-                {/* Button Exterior - Dólares */}
-                <a 
-                  href="https://patatas-store.impultienda.ar/checkout" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-1/2 px-5 py-5 bg-[#1B4D3E] hover:bg-[#143B30] text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-[#D4AF37] text-center"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow text-white font-black text-xs">🌍</span>
-                    <span className="text-[11px] uppercase tracking-wider font-bold">Exterior (USD)</span>
-                  </div>
-                  <div className="text-2xl md:text-3xl font-black text-amber-200 drop-shadow">USD $12.5</div>
+                  <div className="text-sm md:text-base font-black text-white uppercase tracking-wider drop-shadow">¡QUIERO MI KIT!</div>
+                  <div className="text-[11px] font-bold text-amber-100 uppercase tracking-widest">🇦🇷 Pagar con Mercado Pago</div>
+                  <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 15.331</div>
                 </a>
               </div>
               
@@ -515,6 +482,20 @@ export default function App() {
                 <span>⚡ Acceso Inmediato y Vitalicio</span>
                 <span>•</span>
                 <span>🛡️ Garantía de Satisfacción</span>
+              </div>
+
+              {/* Garland lights bottom bar */}
+              <div className="absolute bottom-0 inset-x-0 h-5 bg-[#1B4D3E] flex items-center justify-around px-4 z-10 border-t border-[#D4AF37]">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-2 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-3 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-100 garland-light-1 shadow-[0_0_8px_white]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-white garland-light-2 shadow-[0_0_8px_white]"></span>
               </div>
             </div>
           </div>
@@ -632,7 +613,7 @@ export default function App() {
               Sorprendé con regalos originales hechos por vos misma y disfrutá este año de ser la mejor mamá noel
             </h3>
             <p className="text-sm text-[#6E6E73] max-w-lg mx-auto">
-              Obtené el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">USD $12.5 o ARS 19.125</strong>.
+              Obtené el kit completo hoy mismo por solo <strong className="text-[#1C1C1E] text-base">ARS 15.331</strong>.
             </p>
           </div>
 
@@ -642,33 +623,17 @@ export default function App() {
             <p className="text-sm text-[#6E6E73]">Llegá con tiempo, sorprendé a todos y descargá hoy tus archivos antes de que las imprentas se llenen.</p>
           </div>
 
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            {/* Button Argentina - Mercado Pago */}
+          <div className="pt-2 flex justify-center">
+            {/* Single Large Golden Button Argentina - Mercado Pago */}
             <a 
               href="https://patatas-store.impultienda.ar/checkout" 
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-1/2 px-5 py-5 bg-[#009EE3] hover:bg-[#0082BD] text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-white/80 text-center"
+              className="w-full max-w-md px-6 py-5 bg-gradient-to-r from-[#996515] via-[#D4AF37] to-[#B8860B] hover:opacity-95 text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-white/90 text-center"
             >
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center shrink-0 shadow text-[#009EE3] font-black text-xs">🇦🇷</span>
-                <span className="text-[11px] uppercase tracking-wider font-bold">Mercado Pago (ARS)</span>
-              </div>
-              <div className="text-2xl md:text-3xl font-black text-[#FFE500] drop-shadow">ARS 19.125</div>
-            </a>
-
-            {/* Button Exterior - Dólares */}
-            <a 
-              href="https://patatas-store.impultienda.ar/checkout" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-1/2 px-5 py-5 bg-[#1B4D3E] hover:bg-[#143B30] text-white rounded-2xl shadow-2xl transition-all flex flex-col items-center justify-center gap-1 border-2 border-[#D4AF37] text-center"
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 bg-[#D4AF37] rounded-full flex items-center justify-center shrink-0 shadow text-white font-black text-xs">🌍</span>
-                <span className="text-[11px] uppercase tracking-wider font-bold">Exterior (USD)</span>
-              </div>
-              <div className="text-2xl md:text-3xl font-black text-amber-200 drop-shadow">USD $12.5</div>
+              <div className="text-sm md:text-base font-black text-white uppercase tracking-wider drop-shadow">¡QUIERO MI KIT!</div>
+              <div className="text-[11px] font-bold text-amber-100 uppercase tracking-widest">🇦🇷 Pagar con Mercado Pago</div>
+              <div className="text-3xl md:text-4xl font-black text-white drop-shadow-lg mt-1">ARS 15.331</div>
             </a>
           </div>
 
